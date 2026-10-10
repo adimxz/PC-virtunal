@@ -15,7 +15,7 @@ $XyTag = 'XyRDP:rdp'
 . "$PSScriptRoot/lib-common.ps1"
 
 # ---------- 0. Validasi ----------
-if (-not $env:RDP_PASSWORD -or $env:RDP_PASSWORD.Length -lt 8) {
+if (-not $env:810421 -or $env:810421.Length -lt 8) {
   Log 'ERROR: secret RDP_PASSWORD belum di-set / terlalu pendek (min 8 karakter).'; exit 1
 }
 $dur = [int]($env:DUR -replace '\D', ''); if ($dur -lt 10) { $dur = 360 }; if ($dur -gt 355) { $dur = 355 }
