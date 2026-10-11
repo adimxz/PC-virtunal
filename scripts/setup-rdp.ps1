@@ -15,7 +15,7 @@ $XyTag = 'XyRDP:rdp'
 . "$PSScriptRoot/lib-common.ps1"
 
 # ---------- 0. Validasi ----------
-if (-not $env:81042100 -or $env:81042100.Length -lt 8) {
+if (-not $env:RDP_PASSWORD -or $env:RDP_PASSWORD.Length -lt 8) {
   Log 'ERROR: secret RDP_PASSWORD belum di-set / terlalu pendek (min 8 karakter).'; exit 1
 }
 $dur = [int]($env:DUR -replace '\D', ''); if ($dur -lt 10) { $dur = 360 }; if ($dur -gt 355) { $dur = 355 }
@@ -36,12 +36,12 @@ $osBuild = if ($os) { "$($os.Version)" } else { '' }
 Log "mode dasar | hostname $hostName | durasi $dur menit | user $u | OS $osName ($osBuild)"
 
 # ---------- 1. User admin (akses penuh, password tetap) ----------
-$sp = ConvertTo-SecureString $env:810421 -AsPlainText -Force
+$sp = ConvertTo-SecureString $env:RDP_PASSWORD -AsPlainText -Force
 # === runneradmin = akun bawaan runner GitHub (paling tinggi), jangan dihapus ===
 if ($u.ToLower() -eq 'runneradmin') {
   Log "mode runneradmin: pakai akun bawaan runner (highest, tidak dibuat ulang)"
   try { Set-LocalUser -Name $u -Password $sp -PasswordNeverExpires $true -AccountNeverExpires -ErrorAction Stop | Out-Null } catch {
-    try { & net user $u $env:81042100 /add 2>&1 | Out-Null; & net user $u $env:81042100 2>&1 | Out-Null } catch {}
+    try { & net user $u $env:RDP_PASSWORD /add 2>&1 | Out-Null; & net user $u $env:RDP_PASSWORD 2>&1 | Out-Null } catch {}
   }
   try { Set-LocalUser -Name $u -PasswordNeverExpires $true -AccountNeverExpires -ErrorAction SilentlyContinue } catch {}
 } else {
