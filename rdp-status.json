@@ -1,6 +1,6 @@
 {
   "active": false,
-  "hostname": "rdpfree-7",
+  "hostname": "rdpfree-8",
   "os": "Microsoft Windows Server 2022 Datacenter",
   "os_build": "10.0.20348",
   "os_style": "Windows 10 look",
@@ -8,12 +8,12 @@
   "rdp_user": "xyadmin",
   "rdp_listen": ":::3389 (svchost) | 0.0.0.0:3389 (svchost) + handshake ok via 127.0.0.1",
   "rdp_denyts": true,
-  "started_at": "2026-10-11T00:34:20Z",
-  "expires_at": "2026-10-11T06:29:20Z",
+  "started_at": "2026-10-11T06:25:02Z",
+  "expires_at": "2026-10-11T12:20:02Z",
   "duration_menit": 355,
-  "run_id": "38098604183",
-  "run_number": "7",
-  "run_url": "https://github.com/adimxz/PC-virtunal/actions/runs/38098604183",
+  "run_id": "38117729172",
+  "run_number": "8",
+  "run_url": "https://github.com/adimxz/PC-virtunal/actions/runs/38117729172",
   "mode": "bersih+win10",
   "win10": {
     "look": "ok",
@@ -41,17 +41,17 @@
     "note": "Host siap dipakai klien XyDesk Remote mode Koneksi RDP (Host+Port tunnel). Kunci WinStations\\RDP-Tcp sengaja TIDAK ditulis supaya listener 3389 tidak mati di runner GitHub."
   },
   "grafis": {
-    "debug": "",
-    "vulkan": "llvmpipe (LLVM 23.1.2, 256 bits) (PHYSICAL_DEVICE_TYPE_CPU)",
+    "loader": "vulkan-1.dll 1.4.363.0 (LunarG)",
+    "opengl": "4.6 (Core Profile) Mesa 26.2.4 (git-9a0169f2a7) | llvmpipe (LLVM 23.1.2, 256 bits) | Mesa",
     "note": "GPU software (CPU): OpenGL 4.6 (llvmpipe) + Vulkan lavapipe + WARP bawaan. Runner GitHub tanpa GPU fisik; 3D berat tetap lambat.",
+    "mesa": "26.2.4",
     "install": "mesa 26.2.4.0 [Mesa/X.org]",
+    "files": "opengl32.dll,libgallium_wgl.dll,vulkan_lvp.dll,vulkan-1.dll",
+    "adapters": "Microsoft Hyper-V Video",
+    "vulkan": "llvmpipe (LLVM 23.1.2, 256 bits) (PHYSICAL_DEVICE_TYPE_CPU)",
     "dir": "C:\\XyRDP\\grafis",
     "mode": "software",
-    "loader": "vulkan-1.dll 1.4.363.0 (LunarG)",
-    "mesa": "26.2.4",
-    "adapters": "Microsoft Hyper-V Video",
-    "files": "opengl32.dll,libgallium_wgl.dll,vulkan_lvp.dll,vulkan-1.dll",
-    "opengl": "4.6 (Core Profile) Mesa 26.2.4 (git-9a0169f2a7) | llvmpipe (LLVM 23.1.2, 256 bits) | Mesa"
+    "debug": ""
   },
   "extras": {
     "lightshot": "skip",
@@ -63,15 +63,15 @@
     "admin": true
   },
   "akses": {
+    "mode": "tailscale",
     "tailscale": {
-      "note": "Installer Tailscale gagal, exit 1603",
       "status": "failed",
+      "note": "Installer Tailscale gagal, exit 1603",
       "ip": "",
       "magicdns": "",
       "hostname": "",
       "funnel_addr": ""
-    },
-    "mode": "tailscale"
+    }
   },
-  "stopped_at": "2026-10-11T00:35:14Z"
+  "stopped_at": "2026-10-11T06:25:46Z"
 }
